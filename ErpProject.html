@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전표출력</title>
+    <link rel="stylesheet" href"https://fonts.google.com/icons?selected=Material%20Icons%20Round%3Afullscreen%3A>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
+    <script>
+        $(document).ready(function(){
+            // 서브메뉴 jquery
+            $('.sub-btn').click(function(){
+                $(this).next('.sub-menu').slideToggle();
+                $(this).find('.dropdown').toggleClass('rotate');
+            });
+        });
+        function showPopup1(){
+            window.open("회계단위팝업.html","회계단위팝업","width=310,height=400,left=100,top=50")
+        }
+        function showPopup2(){
+            window.open("결의부서팝업.html","결의부서팝업","width=310,height=400,left=100,top=50")
+        }
+        function showPopup3(){
+            window.open("작성자팝업.html","작성자팝업","width=310,height=400,left=100,top=50")
+        }
+        function showPopup4(){
+            window.open("정렬순서.html","정렬순서팝업","width=310,height=260,left=100,top=50")
+        }
+        function showPopup5(){
+            window.open("인쇄 페이지.html","인쇄페이지","width=700,height=630,left=100,top=50")
+        }
+        function showPopup6(){
+            window.open("전표검색팝업.html","전표검색팝업","width=600,height=500,left=100,top=50")
+        }
+
+
+    </script>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        /* 상단메뉴시작 */
+        .topMenu{
+            width: 1152px;
+            height: 85px;
+            padding-top:15px;
+            background-color: rgb(171,199,222);
+        }
+        .topMenu button{
+            margin-left: 30px;
+            width: 70px;
+            background-color: rgb(171,199,222);
+            border:rgb(171,199,222);
+            font-size:10px;
+        }
+        #topLeft {
+            float: left;
+            margin-left:10px;
+            width: 300px;
+            height:85px;
+            font-size:40px;
+
+        }
+        #topRight{
+            padding-top: 5px;
+            float: left;
+            width:790px;
+            height:85px;
+            font-size:10px;
+
+        }
+        /* 상단메뉴종료 */
+
+        /*왼쪽사이드메뉴 body 포함 시작*/
+        body {
+            min-height: 100px;
+            background-size: cover;
+            background-position: center;
+            background: url()no-repeat;
+            background-color: rgb(250,250,250);
+
+
+        }
+
+        .side-bar {
+            background: rgb(64,81,98);
+            backdrop-filter: blur(15px);
+            margin-top: 100px;
+            width: 290px;
+            height: 764px;
+            /*원래 100vh인걸 수정*/
+            position: absolute;
+            top: 0;
+            left: 0;
+            overflow-y: auto;
+        }
+
+        .side-bar .menu {
+            width: 100%;
+            margin-top: 80px;
+        }
+
+        .side-bar .menu .item {
+            position: relative;
+            cursor: pointer;
+        }
+
+        .side-bar .menu .item a {
+            color: #fff;
+            font-size: 13px;
+            text-decoration: none;
+            display: block;
+            padding: 5px 30px;
+            line-height: 60px;
+        }
+
+        .side-bar .menu .item a:hover {
+            background: rgb(65,126,173);
+            transition: 0.3s ease;
+        }
+
+        .side-bar .menu .item i {
+            margin-right: 15px;
+        }
+
+        .side-bar .menu .item a .dropdown {
+            position: absolute;
+            right: 0;
+            margin: 20px;
+            transition: 0.3s ease;
+        }
+
+        .side-bar .menu .item .sub-menu {
+            background: rgba(255, 255, 255, 0.1);
+            display: none;
+        }
+
+        .side-bar .menu .item .sub-menu .a {
+            padding-left: 80px;
+        }
+
+        .rotate {
+            transform: rotate(90deg);
+        }
+
+        /*왼쪽사이드메뉴 body 포함 종료*/
+        #main {
+            width: 1152px;
+            height: 100%;
+        }
+
+        #leftBox {
+            float: left;
+            width: 26%;
+            height: 864px;
+        }
+
+        #rightBox {
+            float: left;
+            width: 74%;
+            height: 864px;
+        }
+
+        #headBox {
+            width:100%;
+            font-size: 15px;
+            padding-top: 10px;
+            height: 35px;
+            border-bottom: solid 1px black;
+        }
+
+        .headRight {
+            margin-top:5px;
+            float: right;
+            margin-right: 10px;
+        }
+        
+        .headRight button{
+            width: 90px;
+        }
+
+        .middleBoxAll {
+            width: 798px;
+            height: 90px;
+            border-radius: 10px;
+        }
+
+        .middleBox {
+            font-size: 12px;
+        }
+
+        .middleBox form div {
+            float: left;
+            padding-top: 10px;
+            padding-bottom: 10px;
+            width: 263px;
+        }
+
+        .middleBox form div button {
+            width: 20px;
+        }
+
+        .menuSelect {
+            width: 190px;
+        }
+
+        #middle1 {
+            margin-left: 8px;
+        }
+
+        #bottomBox {
+            margin-top: 8px;
+            width: 1600px;
+            height: 600px;
+            border: solid 1px grey;
+            overflow-x: auto;
+        }
+        .table_t1{
+            border-collapse: collapse;
+            border-spacing:0;
+            border : 1;
+        }
+
+        .table_t1 thead th{
+            position : -webkit-sticky; /*for safari*/
+             position: sticky;
+            top:0;
+            font-size:12px;
+            border: solid 1px white;
+            background-color: rgb(55,112,160) ;
+            color:white;
+        }
+        .table_1 tbody th{
+            position:-webkit-sticky; /* for safari */
+            position:sticky;
+            left:0px;
+        } 
+
+
+        .table_1 td,th {
+            padding:0.5em;
+        } 
+        @media only screen and (min-width: 600px) {
+    /* For tablets: */
+     .col-s-1 {width: 8.33%;}
+     .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+     .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+    }
+    @media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-1 {width: 8.33%;}
+    .col-2 {width: 16.66%;}
+    .col-3 {width: 25%;}
+    .col-4 {width: 33.33%;}
+    .col-5 {width: 41.66%;}
+    .col-6 {width: 50%;}
+    .col-7 {width: 58.33%;}
+    .col-8 {width: 66.66%;}
+    .col-9 {width: 75%;}
+    .col-10 {width: 83.33%;}
+    .col-11 {width: 91.66%;}
+      .col-12 {width: 100%;}
+    }
+
+    </style>
+
+</head>
+
+<body>
+    <div id="main">
+    <!--왼쪽사이드메뉴-->
+    <div class="topMenu","col-3">
+        <div id="topLeft">
+            &nbsp; <i class="fas fa-money-check-alt"></i> 회계관리  
+        </div>
+        <div id="topRight">
+            <button name="close" ><i class="far fa-window-close" style="font-size:45px"></i><br>닫기</button>
+            <!-- <button name="helpsCode" ><i class="far fa-file-code" style="font-size:45px"></i><br>코드도움</button> -->
+            <button name="delete" ><i class="fas fa-minus-circle" style="font-size:45px"></i><br>삭제</button>
+            <button name="search" ><i class="fas fa-search" style="font-size:45px"></i><br>조회</button>
+            <button name="print" onclick="showPopup5()"><i class="fas fa-print" style="font-size:45px"></i><br>인쇄</button>
+            <button name="screen" ><i class="far fa-window-restore" style="font-size:45px"></i><br>화면분할</button>
+            <button name="information" ><i class="far fa-question-circle" style="font-size:45px"></i><br>정보</button>
+        </div>
+    </div>
+    <!-- 탑메뉴끝 -->
+    <div id="leftBox">
+    <div class="side-bar" style="float: left;">
+        <div class="menu">
+            
+            <div class="item">
+                <a href="#" class="sub-btn"><i class="far fa-folder"></i> 전표/장부관리<i class="fas fa-angle-right dropdown"></i></a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item">전표입력</a>
+                    <a href="#" class="sub-item">전표승인해제</a>
+                    <a href="#" class="sub-item">전표출력</a>
+                    <a href="#" class="sub-item">분개장</a>
+                    <a href="#" class="sub-item">일월계표</a>
+                    <a href="#" class="sub-item">총계정원장</a>
+                    <a href="#" class="sub-item">현금출납장</a>
+                    <a href="#" class="sub-item">계정별원장</a>
+                    <a href="#" class="sub-item">거래처원장</a>
+                    <a href="#" class="sub-item">관리항목원장</a>
+                    <a href="#" class="sub-item">관리내역현황</a>
+                    <a href="#" class="sub-item">매입매출장</a>
+                    <a href="#" class="sub-item">기간비용현황</a>
+                    <a href="#" class="sub-item">외화명세서</a>
+                    <a href="#" class="sub-item">주요계정증감현황</a>
+                    <a href="#" class="sub-item">계정별 변동추이 분석</a>
+                    <a href="#" class="sub-item">지출증빙서류검토표(관리용)</a>
+                    <a href="#" class="sub-item">채권년령분석</a>
+                    <a href="#" class="sub-item">채권채무잔액조회서</a>
+                    <a href="#" class="sub-item">전자세금계산서검증및전표처리</a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#" class="sub-btn"><i class="far fa-folder"></i>결산/재무제표관리<i class="fas fa-angle-right dropdown"></i></a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item">결산자료입력</a>
+                    <a href="#" class="sub-item">합계잔액시산표</a>
+                    <a href="#" class="sub-item">재무상태표</a>
+                    <a href="#" class="sub-item">손익계산서</a>
+                    <a href="#" class="sub-item">원가보고서</a>
+                    <a href="#" class="sub-item">이익잉여금처분계산서</a>
+                    <a href="#" class="sub-item">기간별손익계산서</a>
+                    <a href="#" class="sub-item">관리항목별손익계산서</a>
+                    <a href="#" class="sub-item">기간별원가보고서</a>
+                    <a href="#" class="sub-item">관리항목별원가보고서</a>
+                    <a href="#" class="sub-item">현금흐름표</a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#" class="sub-btn"><i class="far fa-folder"></i>자금관리<i class="fas fa-angle-right dropdown"></i></a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item">일자별자금계획입력</a>
+                    <a href="#" class="sub-item">자금계획카렌다</a>
+                    <a href="#" class="sub-item">자금현황</a>
+                    <a href="#" class="sub-item">자금계획대비실적현황</a>
+                    <a href="#" class="sub-item">자금입출금내역</a>
+                    <a href="#" class="sub-item">예적금현황</a>
+                    <a href="#" class="sub-item">받을어음명세서</a>
+                    <a href="#" class="sub-item">자금어음명세서</a>
+                    <a href="#" class="sub-item">예적금현황</a>
+                    <a href="#" class="sub-item">받을어음명세서</a>
+                    <a href="#" class="sub-item">지급어음명세서</a>
+                    <a href="#" class="sub-item">유가증권명세서</a>
+                    <a href="#" class="sub-item">일일자금/분개현황</a>
+                    
+                </div>
+            </div>
+            <div class="item">
+                <a href="#" class="sub-btn"><i class="far fa-folder"></i>예산관리<i class="fas fa-angle-right dropdown"></i></a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item">예산신청입력</a>
+                    <a href="#" class="sub-item">예산편성입력</a>
+                    <a href="#" class="sub-item">예산조정입력</a>
+                    <a href="#" class="sub-item">예실대비현황</a>
+                    <a href="#" class="sub-item">예산실적현황</a>
+                    <a href="#" class="sub-item">예산초과현황</a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#" class="sub-btn"><i class="far fa-folder"></i>고정자산관리<i class="fas fa-angle-right dropdown"></i></a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item">고정자산등록</a>
+                    <a href="#" class="sub-item">감가상각비현황</a>
+                    <a href="#" class="sub-item">고정자산명세서</a>
+                    <a href="#" class="sub-item">고정자산변동현황</a>
+                    <a href="#" class="sub-item">고정자산관리대장</a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#" class="sub-btn"><i class="far fa-folder"></i>부가가치세관리<i class="fas fa-angle-right dropdown"></i></a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item">부가세신고서</a>
+                    <a href="#" class="sub-item">세금계산서합계표</a>
+                    <a href="#" class="sub-item">계산서합계표</a>
+                    <a href="#" class="sub-item">매입세액불공제내역</a>
+                    <a href="#" class="sub-item">신용카드발행집계표/수취명세서</a>
+                    <a href="#" class="sub-item">건물등감가상각자산취득명세서</a>
+                    <a href="#" class="sub-item">수출실적명세서</a>
+                    <a href="#" class="sub-item">내국신용장,구매확인서 전자발급명세서</a>
+                    <a href="#" class="sub-item">영세매출명세서</a>
+                    <a href="#" class="sub-item">부동산임대공급가액명세서</a>
+                    <a href="#" class="sub-item">의제매입세액공제신청서</a>
+                    <a href="#" class="sub-item">사업장매입세액공제신고서</a>
+                    <a href="#" class="sub-item">사업자단위과세 사업장별세액명세서 </a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#" class="sub-btn"><i class="far fa-folder"></i>업무승용차관리<i class="fas fa-angle-right dropdown"></i></a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item">업무승용차 차량등록</a>
+                    <a href="#" class="sub-item">업무승용차 운행기록부</a>
+                    <a href="#" class="sub-item">업무승용차 관련비용 명세서(관리용)</a>
+                </div>
+            </div>
+            <div class="item">
+                <a href="#" class="sub-btn"><i class="far fa-folder"></i>기초정보관리<i class="fas fa-angle-right dropdown"></i></a>
+                <div class="sub-menu">
+                    <a href="#" class="sub-item">계정과목등록</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <!-- 왼쪽박스끝 -->
+        <div id="rightBox" class="col-9">
+            <div id="headBox">
+                <i class="fas fa-caret-square-right" style="font-size:25px;"></i>
+                <b><big><big>전표출력</big></big></b>
+                <div class="headRight">
+                    <button name="전표검색" onclick="showPopup6()">전표검색</button>
+                    <button name="정렬순서" onclick="showPopup4()">정렬순서</button>
+                    <button name="계정합계">계정합계</button>
+                    <button name="전표양식">전표양식</button>
+                </div>
+            </div>
+            <br>
+            <div class="middleBoxAll">
+                <div class="middleBox">
+                    <form>
+                        <!--중간박스-->
+                        <div id="middle1">
+
+                            회계단위
+                            <select class="menuSelect" name="선택전체" style="background: lemonchiffon;">
+                                <option value="KEY0">선택전체</option>
+                                <option value="KEY1">1000 (주)한국생산 본점</option>
+                                <option value="KEY2">2000 (주)한국생산 춘천지사</option>
+                                <option value="KEY3">3000 (주)한국생산 부산지사</option>
+                                <option value="KEY4">4000 (주)한국생산 대전지사</option>
+                            </select><button onclick="showPopup1();"/><i class="fas fa-search-plus"></i></button><br>
+                            결의기간
+                            <input type=text required placeholder="__/__/____" size=7 style="background: lemonchiffon;">
+                            ~
+                            <input type=text required placeholder="__/__/____" size=7
+                                style="background: lemonchiffon;"><button><i class="fas fa-calendar-alt"></i></button><br>
+                            전표유형
+                            <select class="menuSelect" mame="전표유형">
+                                <option value="KEY1">전체</option>
+                                <option value="KEY2">1. 일반</option>
+                                <option value="KEY3">2. 매입</option>
+                                <option value="KEY4">3. 수출</option>
+                                <option value="KEY5">4. 수금</option>
+                                <option value="KEY6">5. 반제</option>
+                                <option value="KEY7">6. 수정</option>
+                                <option value="KEY8">7. 본지점</option>
+                                <option value="KEY8">8. 결산</option>
+                            </select>
+                        </div>
+                        <div class="middleBox">
+                            결의부서 <input type="text" name="과목코드" required placeholder="1001" size=2>
+                            <button onclick="showPopup2()" name="과목코드"><i class="fas fa-search-plus"></i></button> 
+                            <input type="text" value="회계팀" style="background-color:cornflowerblue" size=12> <br>
+                            전표상태
+                            <select class="menuSelect" name="전표상태">
+                                <option value="KEY1">전체</option>
+                                <option value="KEY2">1. 승 인</option>
+                                <option value="KEY3">2. 미 결</option>
+                            </select><br>
+                            출력여부
+                            <select class="menuSelect" mame="출력여부">
+                                <option value="KEY1">전체</option>
+                                <option value="KEY2">1. 출 력</option>
+                                <option value="KEY3">2. 미출력</option>
+                            </select>
+                        </div>
+                        <div class="middleBox">
+                            작성자 &nbsp;&nbsp;<input type="text" name="작성자"  placeholder="ERP13A01"
+                                size=6><button onclick="showPopup3();" name="작성자"><i class="fas fa-search-plus"></i></button> <input type="text" value="김은찬" style="background-color :cornflowerblue" readonly size=9>
+                            <br>
+                            전표구분
+                            <select class="menuSelect" name="전표구분">
+                                <option value="KEY1">전체</option>
+                                <option value="KEY2">1. 출 금</option>
+                                <option value="KEY3">2. 입 금</option>
+                                <option value="KEY4">2. 대 체</option>
+                            </select>
+                        </div>
+                </div>
+                </form>
+            </div>
+            <div id="bottomBox">
+                <table class=".col-12 table_t1">
+                    <thead>
+                        <tr>
+                            <!-- <th><i class="fas fa-search-plus"></i></th>
+                            <th>결의일</th>
+                            <th>결의No</th>
+                            <th>순번</th>
+                            <th>기표일자</th>
+                            <th>기표</th>
+                            <th>구분</th>
+                            <th>코드</th>
+                            <th>계정과목명</th>
+                            <th>코드</th>
+                            <th>거래처명</th> 
+                            <th>적요</th>
+                            <th>차변</th>
+                            <th>대변</th>
+                            <th>출력일자</th> -->
+                            <th style="width: 1%"><i class="far fa-folder"></i></th>
+                            <th style="width: 7%">결의일</th>
+                            <th style="width: 4%">결의No</th>
+                            <th style="width: 3%">순번</th>
+                            <th style="width: 7%">기표일자</th>
+                            <th style="width: 3%">기표</th>
+                            <th style="width: 4%">구분</th>
+                            <th style="width: 4%">코드</th>
+                            <th style="width: 13%">계정과목명</th>
+                            <th style="width: 5%">코드</th>
+                            <th style="width: 14%">거래처명</th> 
+                            <th style="width: 10%">적요</th>
+                            <th style="width: 9%">차변</th>
+                            <th style="width: 9%">대변</th>
+                            <th style="width: 7%">출력일자</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                            <td>&nbsp;<input type="checkbox" name="데이터" ></td>
+                            <td>2021/12/07</td>
+                            <td>2</td>
+                            <td>1</td>
+                            <td>2021/12/14</td>
+                            <td>1</td>
+                            <td>대체</td>
+                            <td>13500</td>
+                            <td>부가세대급금</td>
+                            <td>00011</td>
+                            <td>(주)현진자동차</td>
+                            <td>예정신고누락분</td>
+                            <td>300,000,000</td>
+                            <td>300,000,000</td>
+                            <td>2021/12/14</td>
+
+                        </tr>
+                    </tbody>
+
+                </table>
+                <!--아래박스-->
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+</body>
+
+</html>

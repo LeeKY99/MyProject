@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href"https://fonts.google.com/icons?selected=Material%20Icons%20Round%3Afullscreen%3A>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+            function showPopup0(){
+            window.open("결재란 등록.html","결재란등록","width=510,height=210,left=100,top=50")
+        }
+        function showPopup2(){
+            window.open("미리보기.html","미리보기","width=800,height=600,left=100,top=50")
+        }
+    //     function pagePrintPreview(){
+    //     var browser = navigator.userAgent.toLowerCase();
+    //         if ( -1 != browser.indexOf('chrome') ){
+    //             window.print();
+    //         }else if ( -1 != browser.indexOf('trident') ){
+    //         try{
+    //             //참고로 IE 5.5 이상에서만 동작함
+    //             //웹 브라우저 컨트롤 생성
+    //             var webBrowser = '<OBJECT ID="previewWeb" WIDTH=0 HEIGHT=0 CLASSID="CLSID:8856F961-340A-11D0-A96B-00C04FD705A2"></OBJECT>';
+    //             //웹 페이지에 객체 삽입
+    //             document.body.insertAdjacentHTML('beforeEnd', webBrowser);
+    //             //ExexWB 메쏘드 실행 (7 : 미리보기 , 8 : 페이지 설정 , 6 : 인쇄하기(대화상자))
+    //             previewWeb.ExecWB(7, 1);
+    //                //객체 해제
+    //             previewWeb.outerHTML = "";
+    //         }catch (e) {
+    //             alert("- 도구 > 인터넷 옵션 > 보안 탭 > 신뢰할 수 있는 사이트 선택\n   1. 사이트 버튼 클릭 > 사이트 추가\n   2. 사용자 지정 수준 클릭 > 스크립팅하기 안전하지 않은 것으로 표시된 ActiveX 컨트롤 (사용)으로 체크\n\n※ 위 설정은 프린트 기능을 사용하기 위함임");
+    //     }   
+    // }
+// }
+    </script>
+ 
+     <title>인쇄</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+
+        b{
+            color:rgb(65,126,173);
+        }
+
+        #top{
+            background-color: rgb(65,126,173);
+            width: 700px;
+            color: white;
+            border : solid 1px rgb(65,126,173);
+        }
+
+        #cancle{
+            background-color: rgb(65,126,173);
+            color: white;
+            border: rgb(65,126,173);
+            float:right;
+            margin-right: 15px;
+            margin-top: 4px;
+        }
+
+        .middleButton{
+            margin: 6px;
+            width: 166px;
+            height: 45px;
+            background-color:#F7F8FC;
+            border:solid 1px rgb(104, 120, 133);
+            color: rgb(7, 116, 204);
+            font-size: 18px;
+        }
+
+        #mainBox{
+            width: 700px;
+            height: 630px;
+            background-color: white;
+            border : solid 1px rgb(171,199,222);
+        }
+
+        #headerBox{
+            width:100%;
+            height: 5%;
+            background-color: rgb(171,199,222);
+        }
+        
+        #middleBox{
+            margin-top : 10px;
+            background-color:#F7F8FC;
+            width: 100%;
+            height:250px;
+        }
+
+        #middleLeftTop{
+            padding-top:5px;
+            margin-left: 10px;
+            width: 45%;
+            background-color: #CAC9CE;
+            height: 135px;
+            float: left;
+        }
+
+        #middleRightTop{
+            padding-top:5px;
+            float: left;
+            margin-left: 5px;
+            width: 52%;
+            background-color: #CAC9CE;
+            height: 135px;
+        }
+
+        #middleLeftBottom{
+            margin-top:5px;
+            margin-left: 10px;
+            width: 45%;
+            background-color: #CAC9CE;
+            height: 100px;
+            float: left;
+        }
+        #middleRightBottom{
+            padding-top: 5px;
+            margin-top:5px;
+            margin-left: 5px;
+            width: 52%;
+            background-color: #CAC9CE;
+            height: 95px;
+            float: left;
+        }
+        #middleButton1{
+            margin-top: 5px;
+            width: 100px;
+            margin-left: 480px;
+        }
+        #BottomBox{
+            margin-top : 10px;
+            background-color:#F7F8FC;
+            width: 100%;
+            height:250px;
+        }
+
+        #BottomLeftTop{
+            padding-top:5px;
+            margin-left: 10px;
+            width: 45%;
+            background-color: #CAC9CE;
+            height: 135px;
+            float: left;
+        }
+
+        #BottomRightTop{
+            padding-top:5px;
+            float: left;
+            margin-left: 5px;
+            width: 52%;
+            background-color: #CAC9CE;
+            height: 135px;
+        }
+
+        #BottomLeftBottom{
+            margin-top:5px;
+            margin-left: 10px;
+            width: 45%;
+            background-color: #CAC9CE;
+            height: 100px;
+            float: left;
+        }
+        #BottomRightBottom{
+            padding-top: 5px;
+            margin-top:5px;
+            margin-left: 5px;
+            width: 52%;
+            background-color: #CAC9CE;
+            height: 95px;
+            float: left;
+        }
+        #BottomButton{
+            margin-left: 200px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div id="top">
+         &nbsp; 인쇄 기본 설정
+        <button id="cancle">X</button>
+    </div>
+    <div id="mainBox">
+        <div id="headerBox">
+            &nbsp;<b>프린터선택</b> &nbsp;
+            <select style="width: 300px;">
+                <option>
+                    Microsoft Print to PDF
+                </option>
+            </select>
+            &nbsp;&nbsp;&nbsp;
+            <button style="width:120px;">
+                <i class="fas fa-exclamation"></i>
+                &nbsp;
+                등록정보
+            </button>
+
+            <button style="width:120px;">
+                <i class="far fa-window-close"></i>
+                &nbsp;
+                취소
+            </button>
+        </div>
+        <div id="middleBox">
+            <div id="middleLeftTop">
+                &nbsp;<b>폰트서식</b> &nbsp;&nbsp;<input type="radio" name="폰트서식">굴림체 <input type="radio" name="폰트서식">바탕체 <input type="radio" name="폰트서식">돋움체<br>
+                &nbsp;<b>폰트내용</b> &nbsp;&nbsp;<input type="radio" name="폰트내용">굴림체 <input type="radio" name="폰트내용">바탕체 <input type="radio" name="폰트내용">돋움체<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox"> 폰트크기 자동조정<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox"> 금액 기울임꼴 표시<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox"> 양식 폰트 사용<br>
+                &nbsp;<b>용지방향</b> &nbsp;&nbsp;<input type="radio" name="용지방향">&nbsp;세로 <input type="radio" name="용지방향">&nbsp;가로<br>
+            </div>
+            <div id="middleRightTop">
+                &nbsp;<b>인쇄형태</b>
+                <select name="인쇄형태" style="width: 270px;">
+                    <option>전표(A4)[양식지]-양식4</option>
+                </select><br>
+                <button class="middleButton" name="인쇄"><i class="fas fa-print"></i>&nbsp;인쇄하기</button><button class="middleButton" name="미리보기" onclick="showPopup2()"><i class="far fa-eye"></i>&nbsp;미리보기</button> <br>
+                <button class="middleButton" name="팩스"><i class="fas fa-fax"></i>&nbsp;팩스로보내기</button><button class="middleButton" name="메신저"><i class="fab fa-discourse"></i>&nbsp;메신저로 보내기</button>    
+            </div>
+
+            <div id="middleLeftBottom">
+                &nbsp;<b>여백설정</b> <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;좌측 &nbsp;<input type="number" style="width: 70px;"> mm <button name="기본값" style="width: 60px;">기본값</button><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;상단 &nbsp;<input type="number" style="width: 70px;"> mm <button name="저장" style="width: 60px;">저장</button>
+            </div>
+            <div id="middleRightBottom">
+                &nbsp;<b>인쇄범위</b> &nbsp;<input type="radio" name="인쇄범위"> 전체<br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+                <input type="radio" name="인쇄범위"> 인쇄할 페이지 <input type="number" style="width: 60px;" name="인쇄할 페이지"> ~ <input type="number" style="width: 60px;" name="인쇄할 페이지"><br>
+                &nbsp;<b>인쇄매수</b> &nbsp; <input type="number" style="width: 60px;" name="인쇄매수">
+                &nbsp;&nbsp;<b>인쇄배율</b>&nbsp;&nbsp;<input type="number" style="width: 60px;" name="인쇄배율"> %
+            </div>
+        </div>
+        &nbsp;&nbsp;&nbsp;<b>용지선택</b> 
+        <select style="width: 600px;">
+            <option>
+                Microsoft Print to PDF
+            </option>
+        </select><br>
+            <button id = "middleButton1" name="사용자서식" style="width: 100px;"><i class="fas fa-file-contract"></i> 사용자서식</button>&nbsp;&nbsp;<button name="숨기기" style="width: 100px;"><i class="fas fa-arrow-alt-circle-up"></i>숨기기</button>
+        <div id="BottomBox">
+            <div id="BottomLeftTop">
+                &nbsp;<b>결재란인쇄</b> <input type="radio" name="결재란인쇄">인쇄함 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="결재란인쇄">인쇄안함<br>
+                &nbsp;<b>인쇄위치</b> &nbsp;&nbsp; <input type="radio" name="인쇄위치">상단 &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="인쇄위치">하단 <br>
+                &nbsp;<b>페이지지정</b> <input type="radio" name="페이지지정">첫 페이지 <input type="radio" name="페이지지정">전체 페이지
+                <button id="BottomButton" name="결재란등록" onclick="showPopup0()">결재란 등록</button>
+            </div>
+            <div id="BottomRightTop">
+                &nbsp;<b>인쇄형태</b> &nbsp;<input type="checkbox" name="인쇄형태"> "해당사항없음" 인쇄 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="인쇄형태"> "빈문서" 인쇄 <br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="checkbox" name="인쇄형태"> "전자신고해당" 제외 인쇄<br>
+                <br>
+                <br>
+                &nbsp;<b>인쇄설정</b> <input type="checkbox" name="프린터 기본설정"> 프린터 기본설정으로 저장
+
+            </div>
+            <div id="BottomLeftBottom">
+                &nbsp;<b>출력일인쇄</b> <input type="radio" name="출력일인쇄">인쇄함 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name"출력일인쇄">인쇄안함<br>  
+                &nbsp;<b>매수인쇄</b> &nbsp;&nbsp;&nbsp;<input type="radio" name="매수인쇄">인쇄함 &nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name"매수인쇄">인쇄안함<br>  
+            </div>
+            <div id="BottomRightBottom">
+                &nbsp;<input type="checkbox" name="머리글"> 머리글
+                <select name="머리글">
+                    <option>
+                        상단중앙
+                    </option>
+                </select><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="머리글"><br>
+                &nbsp;<input type="checkbox" name="꼬리글"> 꼬리글
+                <select name="꼬리글">
+                    <option>
+                        하단중앙
+                    </option>
+                </select><br>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <input type="text" name="꼬리글">
+            </div>
+
+        </div>
+
+        </div>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>전표검색</title>
+    <link rel="stylesheet" href"https://fonts.google.com/icons?selected=Material%20Icons%20Round%3Afullscreen%3A>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+                function showPopup1(){
+            window.open("회계단위팝업.html","회계단위팝업","width=310,height=400,left=100,top=50")
+        }
+        function showPopup2(){
+            window.open("결의부서팝업.html","결의부서팝업","width=310,height=400,left=100,top=50")
+        }
+        function showPopup3(){
+            window.open("작성자팝업.html","작성자팝업","width=310,height=400,left=100,top=50")
+        }
+        function showPopup4(){
+            window.open("정렬순서.html","정렬순서팝업","width=310,height=260,left=100,top=50")
+        }
+    </script>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        .container{
+            width: 600px;
+            height:400px;
+            left:100px;
+            top:50px;
+            background-color: whitesmoke;
+            border-radius: 10px;
+        }
+        .container button {
+            margin-right: 5px;
+            width: 100px;
+            float: right;
+        }
+        #head {
+            text-align: center;
+            background-color: gray;
+            width: 590px;
+            height: 40px;
+            padding-top:14px;
+            padding-left:10px;
+            font-size:18px;
+            border-radius: 10px;
+            color:white;
+        }
+        .middle{
+            background-color: aliceblue;
+            margin-left: 10px;
+            width:590px;
+            height: 350px;
+        }
+        .middle button {
+            font-size:12px;
+            width: 25px;
+            float:none;
+        }
+     </style>
+
+        
+</head>
+<body>
+    <div class ="container">
+        <!-- head -->
+        <div id="head">
+            <b>[전표 상세 검색]</b>
+            </div>
+            <div class="middle">
+                회계단위
+                <select style="width: 220px;">
+                    <option>1000 (주)한국생산 본점</option>
+                </select>
+                <button> <i class="fas fa-search-plus"></i> </button><br>
+                결의부서 
+                <input type="text"name="결의부서" required placeholder="1001" size=6>
+                <button onclick="showPopup2()"> <i class="fas fa-search-plus"></i> </button>
+                <input type="text"name="결의부서2" value="김은찬" readonly size=11> ~ 
+                <input type="text"name="결의부서3" required placeholder="1001" size=6>
+                <button onclick="showPopup2()"> <i class="fas fa-search-plus"></i> </button>
+                <input type="text"name="결의부서4" value="김은찬" readonly size=11>
+                <br>
+
+                작업자&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"name="작업자" required placeholder="ERP13A01" size=6>
+                <button onclick="showPopup3()"> <i class="fas fa-search-plus"></i> </button>
+                <input type="text"name="작업자2" value="김은찬"readonly size=11> ~ 
+                <input type="text"name="작업자3" required placeholder="ERP13A01" size=6>
+                <button onclick="showPopup3()"> <i class="fas fa-search-plus"></i> </button>
+                <input type="text"name="작업자4" value="김은찬"readonly size=11>
+                <br>
+                거래처&nbsp;&nbsp;&nbsp;&nbsp;<input type="text"name="거래처" size=6>
+                <button onclick="showPopup2()"> <i class="fas fa-search-plus"></i> </button>
+                <input type="text"name="거래처2"  size=11> ~ 
+                <input type="text"name="거래처3"  size=6>
+                <button onclick="showPopup2()"> <i class="fas fa-search-plus"></i> </button>
+                <input type="text"name="거래처4"  size=11>
+                <br>
+                계정과목
+                <input type="text"name="계정과목"  size=6>
+                <button> <i class="fas fa-search-plus"></i> </button>
+                <input type="text"name="계정과목2"  size=11> ~ 
+                <input type="text"name="계정과목3"  size=6>
+                <button> <i class="fas fa-search-plus"></i> </button>
+                <input type="text"name="계정과목4"  size=11>
+                <br>
+                사용부서
+                <input type="text"name="사용부서"  size=6>
+                <button onclick="showPopup2()"> <i class="fas fa-search-plus"></i> </button>
+                <input type="text"name="사용부서2"  size=11> ~ 
+                <input type="text"name="사용부서3"  size=6>
+                <button onclick="showPopup2()"> <i class="fas fa-search-plus"></i> </button>
+                <input type="text"name="사용부서4"  size=11>
+                <br>
+
+
+                결의기간
+                <input type=text required placeholder="__/__/____" size=7 style="background: lemonchiffon;">
+                ~
+                <input type=text required placeholder="__/__/____" size=7
+                    style="background: lemonchiffon;"><button><i class="fas fa-calendar-alt"></i></button>
+
+                    &nbsp;&nbsp;&nbsp;결의번호 &nbsp;<input type="text" name="결의번호1" size=5> ~ <input type="text" name="결의번호2" size=5>
+                    <br>
+                기표기간
+                <input type=text required placeholder="__/__/____" size=7 style="background: lemonchiffon;">
+                ~
+                <input type=text required placeholder="__/__/____" size=7
+                    ><button><i class="fas fa-calendar-alt"></i></button>
+                    &nbsp;&nbsp;&nbsp;기표번호 &nbsp;<input type="text" name="기표번호1" size=5> ~ <input type="text" name="기표번호2" size=5>
+                    <br>
+                작성기간
+                <input type=text required placeholder="__/__/____" size=7 style="background: lemonchiffon;">
+                ~
+                <input type=text required placeholder="__/__/____" size=7
+                    ><button><i class="fas fa-calendar-alt"></i></button>
+                    &nbsp;&nbsp;&nbsp;전표상태
+                    <select style="width: 170px;">
+                        <option>
+                            전체
+                        </option>
+                        <option>
+                            1. 승인 
+                        </option>
+                        <option>
+                            2. 미결
+                        </option>
+                    </select>
+                    <br>
+                연동코드
+                <select style="width: 200px;">
+                    <option>
+
+                    </option>
+                </select>
+                <button> <i class="fas fa-search-plus"></i> </button>
+                전표구분
+                <select style="width: 170px;">
+                    <option>
+                        전체
+                    </option>
+                    <option>
+                        1. 출금
+                    </option>
+                    <option>
+                        2. 입금
+                    </option>
+                    <option>
+                        3. 대체
+                    </option>
+                </select>
+                <br>
+                프로젝트
+                <select style="width: 200px;">
+                    <option>
+
+                    </option>
+                </select>
+                <button> <i class="fas fa-search-plus"></i> </button>
+                전표유형
+                <select style="width: 170px;">
+                    <option>
+                        전체
+                    </option>
+                    <option>
+                        1. 출금
+                    </option>
+                    <option>
+                        2. 입금
+                    </option>
+                    <option>
+                        3. 대체
+                    </option>
+                </select>
+                <br>
+                품의내역
+                <input type="text" name="품의내역" size="25">
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;금액 <input type="text" name="금액1" size=5> ~ <input type="text" name="금액2" size=5>
+                <br>
+                적요명 &nbsp;&nbsp;
+                <input type="text" name="적요명" size="25">
+                &nbsp;&nbsp;&nbsp;&nbsp;출력여부
+                <select style="width: 170px;">
+                    <option>
+                        전체
+                    </option>
+                    <option>
+                        1. 출 력
+                    </option>
+                    <option>
+                        2. 미출력
+                    </option>
+                </select>
+                <br>
+                신고사업장
+                <select style="width: 230px;">
+                    <option>
+
+                    </option>
+                </select>
+                <button> <i class="fas fa-search-plus"></i> </button>
+                &nbsp;&nbsp; <input type="checkbox" name="복사한 전표 찾기"> 복사한 전표 찾기
+                
+                <br>
+                <input type="checkbox" name="대차차액 전표 찾기"> 대차차액 전표 찾기
+                <input type="checkbox" name="예정신고누락분 찾기" style="margin-left: 210px;"> 예정신고누락분 찾기
+            </div>
+
+
+            <button name="cancle"> 취소[ESC] </button>
+            <button name="search"> 검색[TAP] </button> 
+        </div>
+
+</body>
+</html>
